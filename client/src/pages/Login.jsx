@@ -22,6 +22,8 @@ function Login({ onLogin }) {
           console.log(response.data);
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('email', formData.email);
+          localStorage.setItem('department', response.data.dept);
+
           onLogin(response.data.isAdmin);
           history('/home-Admin');
         } else {

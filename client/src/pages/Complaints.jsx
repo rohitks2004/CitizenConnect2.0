@@ -34,7 +34,8 @@ function Complaints() {
     useEffect(() => {
       async function fetchComplaints() {
           try {
-              const response = await axios.get('http://localhost:8800/api/admin/ecomplaints');
+            const dept=localStorage.getItem('department');
+              const response = await axios.get(`http://localhost:8800/api/admin/complaints?dept=${dept}`);
               const dataWithImages = await Promise.all(
                   response.data.map(async (complaint) => {
                       const imageUrl = await convertToImage(complaint.image);

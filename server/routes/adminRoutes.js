@@ -4,6 +4,7 @@ import { eleComplaints } from "../controllers/retrieveComplaints.js";
 
 const router=express.Router();
 
-router.get("/ecomplaints",eleComplaints);
+router.get("/complaints",eleComplaints);
+
 
 export default router;
