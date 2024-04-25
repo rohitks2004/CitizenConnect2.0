@@ -22,14 +22,13 @@ function Login({ onLogin }) {
           console.log(response.data);
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('email', formData.email);
-          onLogin();
+          onLogin(response.data.isAdmin);
           history('/home-Admin');
         } else {
           console.log(response.data);
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('email', formData.email);
-          onLogin();
-          history('/home');
+          onLogin(response.data.isAdmin);
         }
       } else {
         console.error('Invalid status code:', response.status);
