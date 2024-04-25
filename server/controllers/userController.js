@@ -20,9 +20,6 @@ export const registerUser = async (req, res) => {
           
         })
 
-        // if (user); {
-        //     const token= createJWT(res, user._id) 
-        //     user.password = password;
         if(user){
            res.status(201).json({user});
         } else {
@@ -100,7 +97,10 @@ export const complain_register = async (req, res) => {
             department,
             description,
             location,
-            image
+            image,
+            resolved:false,
+            posted:false
+
         });
 
         // Save the new complaint to MongoDB
