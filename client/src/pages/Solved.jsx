@@ -59,10 +59,7 @@ function Solved() {
           return null;
       }
   }
-  function onResolve(){
 
-  }
-  
       return (
         <div className='container home-container'>
           <div className="head1">

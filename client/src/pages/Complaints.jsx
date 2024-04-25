@@ -71,8 +71,8 @@ function Complaints() {
           </div>
             <div className="complaints-container">
                 { 
-                 filtered_complaints.map((complaint) => (
-                    <div key={complaint._id} className="complaint" style={{"border":"none"}}>
+                 filtered_complaints.map((complaint,index) => (
+                    <div key={index} className="complaint" style={{"border":"none"}}>
                         <h3>{complaint.problem}</h3>
                         <p><span>Department:</span> {complaint.department}</p>  
                         <p><span>Description:</span> {complaint.description}</p>
