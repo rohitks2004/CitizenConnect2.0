@@ -26,13 +26,13 @@ function HomeAdmin({ onLogout }) {
   <div className="card">
     <img src="https://t3.ftcdn.net/jpg/01/86/79/64/360_F_186796408_R0YkEqSuSpsxA5SFkSlAAkrGWDuu3IBK.jpg" alt="Complaints Image"/>
     <h2>Complaints</h2>
-    <Link to="/complaints">View</Link>
+    <Link to="complaints">View</Link>
   </div>
   <div className="gap"></div> 
   <div className="card">
     <img src="https://cdn-icons-png.flaticon.com/512/1027/1027595.png" alt="Solved Image"/>
     <h2>Solved</h2>
-    <Link to="/solved">View</Link>
+    <Link to="solved">View</Link>
   </div>
 </div>
 
