@@ -1,0 +1,39 @@
+.complaints-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.complaint {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+.complaint h3 {
+    margin-top: 0;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.complaint p {
+    margin: 10px 0;    
+    line-clamp:1;
+    overflow: hidden;
+    span{
+        color: rgb(29, 36, 202);
+    }
+}
+
+.complaint img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
