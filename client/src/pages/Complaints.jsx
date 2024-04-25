@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import './CSS/Complaints.css'
+import { RiHomeSmileFill } from "react-icons/ri";
+import "./CSS/Complaints.css";
 
 function Complaints() {
     const [complaints, setComplaints] = useState([]);
@@ -72,23 +73,25 @@ function Complaints() {
     // }
 
     return (
-      <>
-      <Link to="/home-Admin">Back to Home Admin</Link>
-          <h2>Complaints</h2>
+      <div className='container home-container'>
+        <div className="head1">
+           <h2 className='h2t'>Complaints</h2>
+           <Link to="/home-Admin"><RiHomeSmileFill className='home-icon' /></Link>
+        </div>
           <div className="complaints-container">
               {complaints.map((complaint) => (
                   <div key={complaint._id} className="complaint">
                       <h3>{complaint.problem}</h3>
-                      <p><strong>Department:</strong> {complaint.department}</p>  
-                      <p><strong>Description:</strong> {complaint.description}</p>
-                      <p><strong>Location:</strong> {complaint.location}</p>
-                      <p><strong>Date:</strong> {new Date(complaint.date).toLocaleDateString()}</p>
+                      <p><span>Department:</span> {complaint.department}</p>  
+                      <p><span>Description:</span> {complaint.description}</p>
+                      <p><span>Location:</span> {complaint.location}</p>
+                      <p><span>Date:</span> {new Date(complaint.date).toLocaleDateString()}</p>
                       {complaint.imageUrl && <img src={complaint.imageUrl} alt="Complaint" />}
                       <button onClick={onResolve} >Resolve</button>
                   </div>
               ))}
           </div>
-      </>
+      </div>
   );
 }
 
