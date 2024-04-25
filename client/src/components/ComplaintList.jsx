@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './ComplaintList.css'
+import "../pages/CSS/Complaints.css"
 const ComplaintList = () => {
     const [complaints, setComplaints] = useState([]);
     useEffect(() => {
@@ -38,14 +38,13 @@ const ComplaintList = () => {
     <h2 id='h2t'>Complaints</h2>
     <div className="complaints-container">
         {complaints.map((complaint) => (
-            <div key={complaint._id} className="complaint">
+            <div key={complaint._id} className={complaint.resolved ? "resolved complaint": "complaint"}>
                 <h3>{complaint.problem}</h3>
                 <p><span>Department:</span> {complaint.department}</p>  
                 <p><span>Description:</span> {complaint.description}</p>
                 <p><span>Location:</span> {complaint.location}</p>
                 <p><span>Date:</span> {new Date(complaint.date).toLocaleDateString()}</p>
                 {complaint.imageUrl && <img src={complaint.imageUrl} alt="Complaint" />}
-                {/* //<button onClick={onResolve} >Resolve</button> */}
             </div>
         ))}
     </div>
