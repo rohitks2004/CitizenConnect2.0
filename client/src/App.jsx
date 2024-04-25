@@ -11,9 +11,7 @@ import Solved from './pages/Solved.jsx';
 
 function App() {
 
-
   const [isAdmin, setIsAdmin] = useState(null);
-  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = (isadmin) => {
@@ -21,30 +19,23 @@ function App() {
     localStorage.setItem("isAdmin",isadmin);
   };
   
-  
   const handleLogout = () => {
-    
-    localStorage.removeItem('token'); 
+    localStorage.clear();
     setIsLoggedIn(false);
   };
   
-    useEffect(() => {
-      
-      const checkLoggedInStatus = () => {
-     
+    useEffect(() => { 
+      // const checkLoggedInStatus = () => {
         const userToken = localStorage.getItem('token'); 
         setIsLoggedIn(!!userToken); 
-      };
-  
-      checkLoggedInStatus();
+      // };
+      // checkLoggedInStatus();
     }, []);
   
   useEffect(() => {
     const storedData = localStorage.getItem('isAdmin');
-    if (storedData) {
-      setIsAdmin(storedData);
-    }
-  }, [handleLogin]); 
+    setIsAdmin(storedData);
+  }, []); 
 
 const router = createBrowserRouter([
   {
@@ -73,8 +64,6 @@ const router = createBrowserRouter([
 
 
   return (
-
-
     <RouterProvider router={router} />
   // <BrowserRouter>
   //   <Routes>
@@ -90,9 +79,7 @@ const router = createBrowserRouter([
         //     <Route path="/solved" element={<Solved/>} />
  //   </Routes>
  // </BrowserRouter>
-
-
-  );
+   );
 }
 
 export default App;
