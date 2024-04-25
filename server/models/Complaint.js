@@ -32,7 +32,13 @@ const complaintSchema = new Schema({
   date: {
     type: Date,
     default: () => new Date().toISOString()
-  }
+  },
+  resolved:{
+    type:Boolean
+  }  ,
+posted:{
+type:Boolean
+}
  
 });
 
