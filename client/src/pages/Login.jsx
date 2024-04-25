@@ -29,6 +29,7 @@ function Login({ onLogin }) {
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('email', formData.email);
           onLogin(response.data.isAdmin);
+          history('/home');
         }
       } else {
         console.error('Invalid status code:', response.status);
