@@ -35,7 +35,7 @@ const ComplaintForm = ({onLogout}) => {
           location: formData.location,
           image: base64Image
         };    
-        const response = await axios.post('http://localhost:8800/api/admin/complaints', data);
+        const response = await axios.post('http://localhost:8800/api/user/complain', data);
     
         console.log(response.data); 
         alert(`form sumbitted `);
@@ -82,7 +82,7 @@ const ComplaintForm = ({onLogout}) => {
       <option value="TransportManagement">TransportManagement</option>
      <option value="Electricity">Electricity</option>
      <option value="Wastemanagement">Waste management</option>
-     <option value="Publictransportation">Public transportation</option>
+     {/* <option value="Publictransportation">Public transportation</option> */}
     
     </select>
     <textarea

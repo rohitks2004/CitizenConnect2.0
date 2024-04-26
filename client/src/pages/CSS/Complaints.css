@@ -14,7 +14,9 @@
     padding: 20px;
     border-radius: 8px;
     border: 3px solid #E50000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 6px 4px 12px -3px rgba(229,0,0,1);
+    -moz-box-shadow: 6px 4px 12px -3px rgba(229,0,0,1);
+    box-shadow: 6px 4px 12px -3px rgba(229,0,0,1);
     width: 300px;
 
     button{
@@ -66,7 +68,10 @@
 }
 }
 .resolved{
-  border: 3px solid green;
+  border: 3px solid #51ff00;
+  -webkit-box-shadow: 6px 4px 12px 0px rgba(81,255,0,1);
+-moz-box-shadow: 6px 4px 12px 0px rgba(81,255,0,1);
+box-shadow: 6px 4px 12px 0px rgba(81,255,0,1);
 }
 
 .head1{
@@ -105,6 +110,6 @@
       }
     }
     .resolved{
-      border: 3px solid green;
+      border: 3px solid #51ff00;
   }
 }
