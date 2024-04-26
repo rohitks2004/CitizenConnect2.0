@@ -65,6 +65,7 @@ function Complaints() {
       }
   }
   function onResolve(complaint_id){
+        console.log(complaint_id);
         setResolve(complaint_id);
   }
   
@@ -84,7 +85,7 @@ function Complaints() {
                         <p><span>Location:</span> {complaint.location}</p>
                         <p><span>Date:</span> {new Date(complaint.date).toLocaleDateString()}</p>
                         {complaint.imageUrl && <img src={complaint.imageUrl} alt="Complaint" />}
-                        <button onClick={onResolve} >Resolve</button>
+                        <button onClick={()=>onResolve(complaint._id)} >Resolve</button>
                     </div> 
                 ))
                 :

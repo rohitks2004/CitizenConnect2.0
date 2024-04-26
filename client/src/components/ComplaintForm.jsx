@@ -35,7 +35,7 @@ const ComplaintForm = ({onLogout}) => {
           location: formData.location,
           image: base64Image
         };    
-        const response = await axios.post('http://localhost:8800/api/user/complain', data);
+        const response = await axios.post('http://localhost:8800/api/admin/complaints', data);
     
         console.log(response.data); 
         alert(`form sumbitted `);

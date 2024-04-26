@@ -37,8 +37,8 @@ const ResolveForm = ({complaint_id}) => {
           image: base64Image
         };  
 
-        // const response = await axios.post("htttp://localhost:8800/api/admin/update", data);
-        // console.log(response.data); 
+        const response = await axios.post("http://localhost:8800/api/admin/update",data);
+        console.log(response.data); 
 
         alert(`form sumbitted `);
         setFormData({
@@ -51,8 +51,6 @@ const ResolveForm = ({complaint_id}) => {
         alert(`${error.response.data.message}`)
       }
 
-    console.log('Description:', description);
-    console.log('Image:', image);
   };
 
   return (

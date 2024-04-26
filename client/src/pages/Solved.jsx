@@ -34,7 +34,8 @@ function Solved() {
     useEffect(() => {
       async function fetchComplaints() {
           try {
-              const response = await axios.get('http://localhost:8800/api/admin/ecomplaints');
+                const dept=localStorage.getItem('department')
+              const response = await axios.get(`http://localhost:8800/api/admin/solved?dept=${dept}`);
               const dataWithImages = await Promise.all(
                   response.data.map(async (complaint) => {
                       const imageUrl = await convertToImage(complaint.image);
@@ -68,8 +69,8 @@ function Solved() {
           </div>
             <div className="complaints-container">
                 { 
-                 filtered_complaints.map((complaint) => (
-                    <div key={complaint._id} className="complaint" style={{"border":"none"}}>
+                 filtered_complaints.map((complaint,index) => (
+                    <div key={index} className="complaint" style={{"border":"none"}}>
                         <h3>{complaint.problem}</h3>
                         <p><span>Department:</span> {complaint.department}</p>  
                         <p><span>Description:</span> {complaint.description}</p>

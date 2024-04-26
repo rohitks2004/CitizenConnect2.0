@@ -12,6 +12,17 @@ export const eleComplaints = async (req, res) => {
     }
 }
 
+export const resolvedComplaints = async (req,res)=>{
+try {
+    const {dept}= req.query;
+    const Complaints = await Complaint.find({ department:dept,resolved:true});
+    res.status(200).json(Complaints);
+    
+} catch (error) {
+    return res.status(400).json(error);
+}
+}
+
 export const updateComplaint = async (req, res) => {
     try {
         const { id, description, image } = req.body; 
