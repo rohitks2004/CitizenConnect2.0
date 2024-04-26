@@ -3,8 +3,12 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import { RiHomeSmileFill } from "react-icons/ri";
 import "./CSS/Complaints.css";
+import ResolveForm from '../components/ResolveForm';
 
 function Complaints() {
+
+   const [resolve ,setResolve] = useState(null);
+
     const [complaints, setComplaints] = useState([{
         "problem": "Muthu Pandi",
         "email": "rohit@mail",
@@ -59,8 +63,8 @@ function Complaints() {
           return null;
       }
   }
-  function onResolve(){
-
+  function onResolve(complaint_id){
+        setResolve(complaint_id);
   }
   
       return (
@@ -70,7 +74,7 @@ function Complaints() {
              <Link to="/home-Admin"><RiHomeSmileFill className='home-icon' /></Link>
           </div>
             <div className="complaints-container">
-                { 
+                { !resolve ?
                  filtered_complaints.map((complaint,index) => (
                     <div key={index} className="complaint" style={{"border":"none"}}>
                         <h3>{complaint.problem}</h3>
@@ -80,8 +84,11 @@ function Complaints() {
                         <p><span>Date:</span> {new Date(complaint.date).toLocaleDateString()}</p>
                         {complaint.imageUrl && <img src={complaint.imageUrl} alt="Complaint" />}
                         <button onClick={onResolve} >Resolve</button>
-                    </div>
-                ))}
+                    </div> 
+                ))
+                :
+                <ResolveForm complaint_id={resolve}/>
+                }
             </div>
         </div>
     );
