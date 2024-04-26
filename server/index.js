@@ -30,7 +30,7 @@ app.use("/api",routes);
 
 app.use(routeNotFound)
 app.use(errorHandler)
-startTwitterScheduler();
+//startTwitterScheduler();
 app.listen(port,()=>{
     console.log(`Listening on port ${port} `);
 })
