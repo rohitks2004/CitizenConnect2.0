@@ -13,10 +13,10 @@
     color: #333;
     padding: 20px;
     border-radius: 8px;
-    border: 3px solid #E50000;
-    -webkit-box-shadow: 6px 4px 12px -3px rgba(229,0,0,1);
-    -moz-box-shadow: 6px 4px 12px -3px rgba(229,0,0,1);
-    box-shadow: 6px 4px 12px -3px rgba(229,0,0,1);
+    border: 3px solid #ff7878;
+    -webkit-box-shadow: 6px 4px 12px -3px rgb(255, 114, 114);
+    -moz-box-shadow: 6px 4px 12px -3px rgb(255, 121, 121);
+    box-shadow: 6px 4px 12px -3px rgb(255, 96, 96);
     width: 300px;
 
     button{
@@ -68,10 +68,10 @@
 }
 }
 .resolved{
-  border: 3px solid #51ff00;
-  -webkit-box-shadow: 6px 4px 12px 0px rgba(81,255,0,1);
--moz-box-shadow: 6px 4px 12px 0px rgba(81,255,0,1);
-box-shadow: 6px 4px 12px 0px rgba(81,255,0,1);
+  border: 3px solid #b2ff8e;
+  -webkit-box-shadow: 6px 4px 12px 0px rgb(165, 255, 123);
+-moz-box-shadow: 6px 4px 12px 0px rgb(174, 255, 136);
+box-shadow: 6px 4px 12px 0px rgb(185, 255, 153);
 }
 
 .head1{
@@ -110,6 +110,6 @@ box-shadow: 6px 4px 12px 0px rgba(81,255,0,1);
       }
     }
     .resolved{
-      border: 3px solid #51ff00;
+      border: 3px solid #a8ff80;
   }
 }

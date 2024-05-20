@@ -1,3 +1,11 @@
+.error{
+  margin-top: 0.125rem/* 2px */;
+  font-size: 1rem/* 12px */;
+  line-height: 1rem/* 16px */;
+  color: #f64949fe;
+}
+
+
 .container {
   background-color: #ffffff;
   width: 80vw;
