@@ -53,7 +53,14 @@ export const loginUser = async (req,res)=>{
             user.password =password;
             console.log(user);
             const isAdmin=user.isAdmin;
-            res.status(200).json({message:"Login successful",isAdmin,token})
+            if(isAdmin==true){
+                const dept=user.department;
+                res.status(200).json({message:"Login successful",isAdmin,token,dept})
+            }
+            else{
+                res.status(200).json({message:"Login successful",isAdmin,token})
+            }
+            
         }
         else{
             return res.status(401).json({status:false , message:"Invalid email or password"});

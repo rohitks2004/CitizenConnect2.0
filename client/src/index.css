@@ -4,8 +4,15 @@
     transition: 0.2s;
   }
   body {
-    background-color: #F3F3F3;
+    background-color: #f3f3f300;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url('C:\\Users\\ASUS\\Documents\\Vs code\\CitizenConnect2.0\\client\\src\\images\\bggg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ensures the background image stays fixed during scroll */
+    min-height: 70vh;
+    
   }
   ul{
     list-style-type: none;
