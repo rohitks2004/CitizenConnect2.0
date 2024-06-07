@@ -3,8 +3,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color:transparent;
-    color: #ffffff;
+    background-color:rgba(185, 182, 182, 0.432);
+    position: sticky;
+    top: 10px;
+    border-radius: 50px;
   
   
    h1 {
@@ -90,7 +92,10 @@
       padding: 10vh 5vw;
       gap: 0;
       height: auto;
+      background-color:transparent;
       .card{
+        color: #000000;
+        background-color:rgba(185, 182, 182, 0.432);
         width: 15vw;
         margin-top: 15px;
         padding: 10vh 2vw;
