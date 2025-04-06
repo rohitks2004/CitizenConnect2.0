@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import routes from './routes/index.js'
 import  dbconnect  from './utils/dbconnect.js';
 import { errorHandler,routeNotFound } from "./middlewares/errorMiddleWare.js";
-//const startTwitterScheduler = require('./controllers/twittercontroller.js');
 import {startTwitterScheduler} from './controllers/twittercontroller.js';
 dotenv.config()
 dbconnect();

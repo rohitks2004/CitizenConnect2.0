@@ -25,10 +25,8 @@ const ComplaintForm = ({onLogout}) => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        // Convert image data to base64
         const base64Image = formData.image;
         const emailid = localStorage.getItem('email');
-        // Prepare form data for file upload
         const data = {
           email:emailid,
           problem: formData.problem,
@@ -37,12 +35,10 @@ const ComplaintForm = ({onLogout}) => {
           location: formData.location,
           image: base64Image
         };    
-        // Send POST request with form data
         const response = await axios.post('http://localhost:8800/api/user/complain', data);
     
-        console.log(response.data); // Log response or handle success
-        // Clear form fields after successful submission
-        alert(`form sumbitted ${response.data}`);
+        console.log(response.data); 
+        alert(`form sumbitted `);
         setFormData({
           problem: '',
           department: '',
@@ -56,7 +52,6 @@ const ComplaintForm = ({onLogout}) => {
       }
     };
     
-    // Function to convert file to base64
     function convertToBase64(file) {
       return new Promise((resolve, reject) => {
         const fileReader = new FileReader();
@@ -87,7 +82,7 @@ const ComplaintForm = ({onLogout}) => {
       <option value="TransportManagement">TransportManagement</option>
      <option value="Electricity">Electricity</option>
      <option value="Wastemanagement">Waste management</option>
-     <option value="Publictransportation">Public transportation</option>
+     {/* <option value="Publictransportation">Public transportation</option> */}
     
     </select>
     <textarea

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./CSS/Login_Signup.css";
 function Login({ onLogin }) {
+  const [error,setError] = useState('')
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -22,6 +23,8 @@ function Login({ onLogin }) {
           console.log(response.data);
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('email', formData.email);
+          localStorage.setItem('department', response.data.dept);
+
           onLogin(response.data.isAdmin);
           history('/home-Admin');
         } else {
@@ -37,8 +40,9 @@ function Login({ onLogin }) {
       }
 
     }
-     catch (error) {
-      console.error(error.response.data.message);
+     catch (e) {
+      console.error(e.response.data.message);
+      setError(e.response.data.message)
     }
   };
 
@@ -62,6 +66,7 @@ function Login({ onLogin }) {
             value={formData.password}
             onChange={handleChange}
           />
+          {error && (<span className=" error">{error}</span>)}
           <button className="button" type="submit">
             Login
           </button>
