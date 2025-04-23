@@ -32,7 +32,7 @@ app.use(routeNotFound)
 app.use(errorHandler)
 //startTwitterScheduler();
 app.listen(port,()=>{
-    console.log(`Listening on port ${port} `);
+    console.log(`Available on port ${port} `);
 })
 
 
